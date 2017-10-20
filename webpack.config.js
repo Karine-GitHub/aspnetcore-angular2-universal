@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Webpack (JavaScriptServices) with a few changes & updates
  * - This is to keep us inline with JSServices, and help those using that template to add things from this one
  *
@@ -37,7 +37,11 @@ module.exports = (env) => {
                 ...sharedModuleRules
             ]
         },
-        plugins: [new CheckerPlugin()]
+        plugins: [new CheckerPlugin()].concat(
+          new webpack.ProvidePlugin({
+            echarts: "echarts",
+          })
+        )
     };
 
     // Configuration for client-side bundle suitable for running in browsers

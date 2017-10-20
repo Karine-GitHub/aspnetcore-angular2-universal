@@ -17,7 +17,10 @@ export class HomeComponent implements OnInit {
 
     // Here you want to handle anything with @Input()'s @Output()'s
     // Data retrieval / etc - this is when the Component is "ready" and wired up
-    ngOnInit() { }
+    ngOnInit() {
+      let myBloçck = document.getElementById('myBlock');
+      console.error(myBloçck.offsetWidth + '/' + myBloçck.offsetHeight);
+    }
 
     public setLanguage(lang) {
         this.translate.use(lang);
